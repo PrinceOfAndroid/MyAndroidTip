@@ -26,4 +26,9 @@ dependencies {
     })
     compile 'com.android.support:appcompat-v7:25.1.0'
     testCompile 'junit:junit:4.12'
+
+    compile 'tv.danmaku.ijk.media:ijkplayer-java:0.7.7.1'
+    compile 'tv.danmaku.ijk.media:ijkplayer-armv7a:0.7.7.1'
+    compile 'tv.danmaku.ijk.media:ijkplayer-exo:0.5.1'
+    compile 'com.squareup.okhttp3:okhttp:3.6.0'
 }
