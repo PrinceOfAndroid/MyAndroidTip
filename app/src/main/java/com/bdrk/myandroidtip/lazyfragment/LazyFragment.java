@@ -76,16 +76,18 @@ public abstract class LazyFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        rootView = onCreateFragmentView(inflater, container, savedInstanceState);
-        initView(rootView);
+        rootView = inflater.inflate(getLayoutId(), container, false);
+        initView(rootView, savedInstanceState);
+        initListener();
         return rootView;
     }
 
-    //抽象 由子类实现，获取View
-    protected abstract View onCreateFragmentView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState);
+    protected abstract int getLayoutId();
+
+    protected abstract void initListener();
 
     //实例化操作
-    protected abstract void initView(View view);
+    protected abstract void initView(View view, Bundle savedInstanceState);
 
     /**
      * 默认为false
