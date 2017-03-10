@@ -54,6 +54,8 @@ public class TabActivity extends BaseActivity {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
                 Log.e("ssssssssss", position + "    " + positionOffset + "       " + positionOffsetPixels);
+
+                // posi 当前tab所在位置
                 myTab.getTabAt(posi).getCustomView().findViewById(R.id.iv_tab).setVisibility(View.GONE);
                 myTab.getTabAt(posi).getCustomView().findViewById(R.id.tv_tab).setVisibility(View.VISIBLE);
 
