@@ -1,13 +1,42 @@
 package com.bdrk.myandroidtip;
 
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
+import android.content.Intent;
+import android.widget.Button;
 
-public class MainActivity extends AppCompatActivity {
+import com.bdrk.myandroidtip.anim.AnimActivity;
+import com.bdrk.myandroidtip.base.BaseActivity;
+
+import butterknife.ButterKnife;
+import butterknife.InjectView;
+import butterknife.OnClick;
+
+public class MainActivity extends BaseActivity {
+    @InjectView(R.id.btn_anim)
+    Button btnAnim;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+    protected int getLayoutRes() {
+        return R.layout.activity_main;
+    }
+
+    @Override
+    protected void initTitle() {
+        setTitleText("AndroidTip");
+    }
+
+    @Override
+    protected void initListener() {
+
+    }
+
+    @Override
+    protected void initView() {
+        ButterKnife.inject(this);
+    }
+
+    @OnClick(R.id.btn_anim)
+    public void onClick() {
+        Intent intent=new Intent(MainActivity.this, AnimActivity.class);
+        startActivity(intent);
     }
 }
